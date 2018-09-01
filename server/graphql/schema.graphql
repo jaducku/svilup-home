@@ -1,0 +1,57 @@
+type Tech {
+    id:ID!
+    seq:Int
+    name:String!
+    url:String!
+    foundation:String
+    imgUrl:String
+    type:String
+    desc:String
+}
+
+type Member{
+    id:ID!
+    seq:Int
+    name:String!
+    intro:String 
+    section:String
+    imgUrl:String
+}
+
+type Timeline{
+    id:ID!
+    seq:Int
+    title:String!
+    subtitle:String
+    content:String
+    cDate:String
+}
+
+type Query{
+    teches:[Tech]
+    tech(id:String!):Tech
+    members:[Member]
+    member(id:String!):Member
+    timelines:[Timeline]
+}
+
+type Mutation{
+    addTech(seq:Int,
+            name:String!,
+            url:String,
+            foundation:String,
+            imgUrl:String,
+            type:String,
+            desc:String):Tech
+    addMember(seq:Int,
+              name:String!,
+              intro:String,
+              section:String,
+              imgUrl:String):Member
+    addTimeline(seq:Int,
+                title:String!,
+                subtitle:String,
+                content:String,
+                content:String,
+                cDate:String):Timeline
+}
